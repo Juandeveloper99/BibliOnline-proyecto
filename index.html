@@ -1,51 +1,37 @@
 <!doctype html>
 <html lang="en">
   <head>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interfaz con Botones</title>
-    <link rel="stylesheet" href="styles.css">
-
-
-
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BibliOnline</title>
-
-    <style>
-
-      .img{
-        width: 150px;
-        height: 150px;
-      }
-
-    </style>
-
-    <link rel="stylesheet" href="style.css">
-
+    <title>Vite + React + TS</title>
+  </head>
   <body>
-    
-    <!-- barra lateral --><nav class="sidebar__nav">
-      <h1>Menu Lateral fijo</h1>
-      <a href="#"><i class = "bx"></i> Perfil </a>
-    <a href="#"><i class = "bx"></i> inicio </a>
-    <a href="#"><i class = "bx"></i>Autores</a>
-    <a href="#"><i class = "bx"></i>Categorias</a>
-    <a href="#"><i class = "bx"></i>Libros</a>
+    <nav class="sidebar__nav">
+
+      <a href="#"><i class = "bx"></i></a>
+      <a href="#"><i class = "bx"></i></a>
+      <a href="#"><i class = "bx"></i>Perfil</a>
+      <a href="#"><i class = "bx"></i>inicio</a>
+      <a href="#"><i class = "bx"></i>Autores</a>
+      <a href="#"><i class = "bx"></i>Categorias</a>
+      <a href="#"><i class = "bx"></i>Libros</a>
     </nav>
-   </main>
+
+    <div class="button-container">
+      <button class="my-button" onclick="buttonClicked('Botón 1')">Top leidos de la semana</button>
+      <button class="my-button" onclick="buttonClicked('Botón 2')">Escritores destacados</button>
+      <button class="my-button" onclick="buttonClicked('Botón 3')">Nuevos Titulos del mes</button>
+    </div>
+
+    <div class="search-container">
+      <h1> BIblionline
+      <input type="text" id="searchInput" placeholder="Buscar...">
+      <button onclick="search()">Buscar</button>
+      
+    </div>
+
   </body>
 
-  <div class="button-container">
-    <button class="my-button" onclick="buttonClicked('Botón 1')">Top leidos de la semana</button>
-    <button class="my-button" onclick="buttonClicked('Botón 2')">Escritores destacados</button>
-    <button class="my-button" onclick="buttonClicked('Botón 3')">Nuevos Titulos del mes</button>
-  <!-- <body>
-
-      <h1>nesesito el icono</h1>
-
-  </body> -->
-</head>
+<link rel="stylesheet" href="style.css">
 </html>
