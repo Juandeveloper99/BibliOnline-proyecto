@@ -19,61 +19,112 @@
 
     <nav class="sidebar__nav">
     
-      <a href="#"><i class = "bx"></i></a>
-      <a href="#"><i class = "bx"></i></a>
+        <a href="#"><i class = "bx"></i></a>
+        <a href="#"><i class = "bx"></i></a>
+        
+        <a href="#"><i class = "bx">
+          <span class="material-symbols-outlined">
+            account_circle
+            </span></i>Perfil</a>
+  
+            <form action="perfil.html" method="GET">
+              <label for="nombre">Nombre:</label>
+              <input type="text" id="nombre" name="nombre" placeholder="Tu nombre">
       
-      <a href="#"><i class = "bx">
-        <span class="material-symbols-outlined">
-          account_circle
-          </span></i>Perfil</a>
-
-          <form action="perfil.html" method="GET">
-            <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre">
-    
-            <label for="email">Correo electrónico:</label>
-            <input type="email" id="email" name="email" placeholder="correo@example.com">
-    
-            <button type="submit">Ir a Configuración de Perfil</button>
-          </form>
-         
-      <a href="#"><i class = "bx"><span class="material-symbols-outlined">
+              <label for="email">Correo electrónico:</label>
+              <input type="email" id="email" name="email" placeholder="correo@example.com">
+      
+              <button type="submit">Ir a Configuración de Perfil</button>
+            </form>
+           
+        <a href="index.html"><i class = "bx"><span class="material-symbols-outlined">
         home
         </span></i>inicio</a>
-      <a href="#"><i class = "bx"><span class="material-symbols-outlined">
+
+      <a href="autores.html"><i class = "bx"><span class="material-symbols-outlined">
         account_box
         </span></i>Autores</a>
-      <a href="#"><i class = "bx"><span class="material-symbols-outlined">
-        category
-        </span></i>Genero</a>
+      
+        <a href="genero.html"><i class = "bx"><span class="material-symbols-outlined">
+          import_contacts
+          </span></i>Genero</a>
+          
       <a href="libros.html"><i class = "bx"><span class="material-symbols-outlined">
         import_contacts
         </span></i>Libros</a>
-      </nav>
-      <div class="button-container">
-      <button class="my-button" onclick="buttonClicked('Botón 1')">Top leidos de la semana  <span class="material-symbols-outlined">
-        bookmark
-        </span></button>
-      <button class="my-button" onclick="buttonClicked('Botón 2')">Escritores Destacados <span class="material-symbols-outlined">
-        grade
-        </span></button>
-      <button class="my-button" onclick="buttonClicked('Botón 3')">Nuevos Titulos del mes <span class="material-symbols-outlined">
-        schedule
-        </span></button>
-    </div>
 
-    <div class="search-container">
-      <h1> BIblionline
-      <input type="text" id="searchInput" placeholder="Buscar...">
-      <button onclick="search()">Buscar</button>
-    </div>
+        <a href="cantidad.html"><i class = "bx"><span class="material-symbols-outlined">
+          filter_list
+          </span></i>Cantidad</a>
 
-    <script>
+        <a href="prestamos.html"><i class = "bx"><span class="material-symbols-outlined">
+          partner_exchange
+          </span></i>Prestamos</a>
 
-    </script>
+        <a href="usuarios.html"><i class = "bx"><span class="material-symbols-outlined">
+          group_add
+          </span></i>usuarios</a>
+          </nav>
+  
+        <table>
+          <tr>
+              <th>
+                id_usuario
+              </th>
+              <th>
+                nombre
+              </th>
+              <th>
+                apellido
+              </th>
+              <th>
+                correo_electronico
+              </th>
+              <th>
+                telefono
+              </th>
+            </th>
+             
+          <tbody id = "filas">
 
-  </body>
+          </tbody>
+        </table>
+  
+  
+      <div class="search-container">
+        <h1> BIblionline
+        <input type="text" id="searchInput" placeholder="Buscar...">
+        <button onclick="search()">Buscar</button>
+      </div>
+  
+      <script>
+          fetch('http://localhost:3000/usuarios')
+      .then(response => response.json())
+      .then(proyectos => {
+          // Obtener el UL de proyectos
+          const filas = document.getElementById('filas');
+          // Recorrer
+          proyectos.forEach(proyecto => {
+              // Crear un LI
+              const td = document.createElement('tr');
+              // Agregar enlace para el proyecto
+              td.innerHTML = `<td>${proyecto.id_usuario}</td>`;
+  
+              td.innerHTML += `<td>${proyecto.nombre}</td>`;
+
+              td.innerHTML += `<td>${proyecto.apellido}</td>`;
+
+              td.innerHTML += `<td>${proyecto.correo_electronico}</td>`;
+
+              td.innerHTML += `<td>${proyecto.telefono}</td>`;
+
+              // Agregar el LI al UL
+              filas.appendChild(td);
+          });
+      });
+      </script>
+        </body>
 
 
-<link rel="stylesheet" href="style.css">
-</html>
+        <link rel="stylesheet" href="style.css">
+        </html>
