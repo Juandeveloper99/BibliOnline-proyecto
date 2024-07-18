@@ -5,7 +5,7 @@
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: rgb(87, 3, 0);
+  background-color: #e37222;
   overflow-x: hidden;
   padding-top: 20x;
 }
@@ -97,7 +97,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #ffae00;
+  background-color: #f1f7ed;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -148,8 +148,8 @@ body {
   display: flex;
   justify-content: left;
   padding: 10px 0;
-  box-shadow: 0 2px 4px rgba(255, 254, 254, 0.1);
-  background-image:url('/images/Logo.jpg');
+  box-shadow: 0 2px 4px rgba(214, 61, 61, 0.1);
+  background: #373737;
   color:#f0f0f0;
 
 
