@@ -97,7 +97,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #f1f7ed;
+  background-color: #ccd6c6;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -185,5 +185,4 @@ button:hover {
   justify-content: center;
   padding: 20px;
 }
-
 

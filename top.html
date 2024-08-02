@@ -16,12 +16,17 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 
     <nav class="sidebar__nav">
     
       <a href="#"><i class = "bx"></i></a>
       <a href="#"><i class = "bx"></i></a>
-      
+
 <!-- configurar perfil  -->
       
       <a href="perfil.html"><i class = "bx">
@@ -30,40 +35,42 @@
           </span></i>Perfil</a>
 
 <!-- configurar perfil  -->
-<a href="index.html"><i class = "bx"><span class="material-symbols-outlined">
-  home
-  </span></i>inicio</a>
 
-<a href="autores.html"><i class = "bx"><span class="material-symbols-outlined">
-  account_box
-  </span></i>Autores</a>
+<!-- enlaces para ver los datos  -->
+      <a href="#"><i class = "bx"><span class="material-symbols-outlined">
+        home
+        </span></i>inicio</a>
 
-  <a href="genero.html"><i class = "bx"><span class="material-symbols-outlined">
-    import_contacts
-    </span></i>Genero</a>
-    
-<a href="libros.html"><i class = "bx"><span class="material-symbols-outlined">
-  import_contacts
-  </span></i>Libros</a>
+      <a href="autores.html"><i class = "bx"><span class="material-symbols-outlined">
+        account_box
+        </span></i>Autores</a>
+      
+        <a href="genero.html"><i class = "bx"><span class="material-symbols-outlined">
+          import_contacts
+          </span></i>Genero</a>
+          
+      <a href="libros.html"><i class = "bx"><span class="material-symbols-outlined">
+        import_contacts
+        </span></i>Libros</a>
 
-  <a href="guardados.html"><i class = "bx"><span class="material-symbols-outlined">
-    bookmark
-    </span></i>Guardados</a>
+        <a href="guardados.html"><i class = "bx"><span class="material-symbols-outlined">
+          bookmark
+          </span></i>Guardados</a>
 
-  <a href="favoritos.html"><i class = "bx"><span class="material-symbols-outlined">
-    favorite
-    </i>Favoritos</a>
+        <a href="favoritos.html"><i class = "bx"><span class="material-symbols-outlined">
+          favorite
+          </i>Favoritos</a>
 
-  <a href="usuarios.html"><i class = "bx"><span class="material-symbols-outlined">
-    group_add
-    </span></i>Usuarios</a>
+        <a href="usuarios.html"><i class = "bx"><span class="material-symbols-outlined">
+          group_add
+          </span></i>Usuarios</a>
+
       </nav>
+<!-- enlaces para ver los datos  -->
 
+<!-- seccion de los iconos  -->
 
-
-
-
-      <title>Tabla de Base de Datos</title>
+<title>Tabla de Base de Datos</title>
       <style>
           table {
               width: 60%;
@@ -78,68 +85,35 @@
               background-color: #f2f2f2;
           }
       </style>
-  </head>
-  <body>
-      <table>
-        <tr>
-            <th>
-                id
+  
+        <table>
+          <tr>
+              <th>
+                id_top
+              </th>
+              <th>
+                id_top_libro
+              </th>
             </th>
-            <th>
-                nombre
-            </th>
-            <th>
-                fecha_de_publicacion
-            </th>
-             <th>
-                libro_genero
-            </th> 
-            <th>
-                id_libro_autor"
-            </th>
-        </tr>
-        <tbody id = "filas">
-        </tbody>
-      </table>
+             
+          <tbody id = "filas">
 
+          </tbody>
+        </table>
+      
+<!-- seccion de los iconos  -->
 
     <div class="search-container">
-      <h1> BIblionline
+      <h1> Biblionline
       <input type="text" id="searchInput" placeholder="Buscar...">
       <button onclick="search()">Buscar</button>
     </div>
 
     <script>
-        fetch('http://localhost:3000/libros')
-    .then(response => response.json())
-    .then(proyectos => {
-        // Obtener el UL de proyectos
-        const filas = document.getElementById('filas');
-        // Recorrer
-        proyectos.forEach(proyecto => {
-            // Crear un LI
-            const td = document.createElement('tr');
-            // Agregar enlace para el proyecto
-            td.innerHTML = `<td>${proyecto.id_libro}</td>`;
-
-            td.innerHTML += `<td>${proyecto.nombre}</td>`;
-
-            td.innerHTML += `<td>${proyecto.fecha_de_publicacion}</td>`;
-
-            td.innerHTML += `<td>${proyecto.libro_genero}</td>`;
-
-            td.innerHTML += `<td>${proyecto.id_libro_autor}</td>`;
-            // Agregar el LI al UL
-            filas.appendChild(td);
-        });
-    });
-
 
     </script>
- 
 
   </body>
-
 
 <link rel="stylesheet" href="style.css">
 </html>

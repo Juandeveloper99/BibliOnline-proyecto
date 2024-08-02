@@ -115,6 +115,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
       table += `</tbody></table>`;
 
+
+      function topleidos (apiDataDiv){
+        
+      }
+
       // Insertar la tabla en el contenedor
       tableContainer.innerHTML = table;
   }

@@ -19,9 +19,10 @@
 
     <nav class="sidebar__nav">
     
-      <a href="#"><i class = "bx"></i></a>
-      <a href="#"><i class = "bx"></i></a>
-      
+        <a href="#"><i class = "bx"></i></a>
+        <a href="#"><i class = "bx"></i></a>
+        
+        
 <!-- configurar perfil  -->
       
       <a href="perfil.html"><i class = "bx">
@@ -30,6 +31,7 @@
           </span></i>Perfil</a>
 
 <!-- configurar perfil  -->
+           
 <a href="index.html"><i class = "bx"><span class="material-symbols-outlined">
   home
   </span></i>inicio</a>
@@ -57,13 +59,9 @@
   <a href="usuarios.html"><i class = "bx"><span class="material-symbols-outlined">
     group_add
     </span></i>Usuarios</a>
-      </nav>
+        </nav>
 
-
-
-
-
-      <title>Tabla de Base de Datos</title>
+        <title>Tabla de Base de Datos</title>
       <style>
           table {
               width: 60%;
@@ -78,68 +76,56 @@
               background-color: #f2f2f2;
           }
       </style>
-  </head>
-  <body>
-      <table>
-        <tr>
-            <th>
-                id
+  
+        <table>
+          <tr>
+              <th>
+                id_libro_cantidad
+              </th>
+              <th>
+                id_libro
+              </th>
+              <th>
+                cantidad
+              </th>
             </th>
-            <th>
-                nombre
-            </th>
-            <th>
-                fecha_de_publicacion
-            </th>
-             <th>
-                libro_genero
-            </th> 
-            <th>
-                id_libro_autor"
-            </th>
-        </tr>
-        <tbody id = "filas">
-        </tbody>
-      </table>
+             
+          <tbody id = "filas">
+
+          </tbody>
+        </table>
+  
+  
+      <div class="search-container">
+        <h1> Biblionline
+        <input type="text" id="searchInput" placeholder="Buscar...">
+        <button onclick="search()">Buscar</button>
+      </div>
+  
+      <script>
+          fetch('http://localhost:3000/cantidad')
+      .then(response => response.json())
+      .then(proyectos => {
+          // Obtener el UL de proyectos
+          const filas = document.getElementById('filas');
+          // Recorrer
+          proyectos.forEach(proyecto => {
+              // Crear un LI
+              const td = document.createElement('tr');
+              // Agregar enlace para el proyecto
+              td.innerHTML = `<td>${proyecto.id_libro_cantidad}</td>`;
+  
+              td.innerHTML += `<td>${proyecto.id_libro}</td>`;
+
+              td.innerHTML += `<td>${proyecto.cantidad}</td>`;
+
+              // Agregar el LI al UL
+              filas.appendChild(td);
+          });
+      });
+      </script>
+        </body>
 
 
-    <div class="search-container">
-      <h1> BIblionline
-      <input type="text" id="searchInput" placeholder="Buscar...">
-      <button onclick="search()">Buscar</button>
-    </div>
-
-    <script>
-        fetch('http://localhost:3000/libros')
-    .then(response => response.json())
-    .then(proyectos => {
-        // Obtener el UL de proyectos
-        const filas = document.getElementById('filas');
-        // Recorrer
-        proyectos.forEach(proyecto => {
-            // Crear un LI
-            const td = document.createElement('tr');
-            // Agregar enlace para el proyecto
-            td.innerHTML = `<td>${proyecto.id_libro}</td>`;
-
-            td.innerHTML += `<td>${proyecto.nombre}</td>`;
-
-            td.innerHTML += `<td>${proyecto.fecha_de_publicacion}</td>`;
-
-            td.innerHTML += `<td>${proyecto.libro_genero}</td>`;
-
-            td.innerHTML += `<td>${proyecto.id_libro_autor}</td>`;
-            // Agregar el LI al UL
-            filas.appendChild(td);
-        });
-    });
-
-
-    </script>
- 
-
-  </body>
-
-
-<link rel="stylesheet" href="style.css">
-</html>
+        <link rel="stylesheet" href="style.css">
+        </html>
