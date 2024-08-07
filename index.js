@@ -1,7 +1,7 @@
 const express = require('express');
 const mysql = require('mysql2');
 const app = express();
-const port = 3001;
+const port = 3000;
 
 // Configura la conexión a la base de datos
 const connection = mysql.createConnection({
@@ -9,6 +9,7 @@ const connection = mysql.createConnection({
   user: 'root',
   password: '6012',
   database: 'Biblioteca_proyecto'
+  
 });
 
 // Conectar a la base de datos
@@ -20,27 +21,9 @@ connection.connect((err) => {
   console.log('Connected to the database.');
 });
 
-// Define una ruta para obtener datos de la base de datos
-app.get('/api/libros', (req, res) => {
-  connection.query('SELECT * FROM libros', (err, results) => {
-    if (err) {
-      res.status(500).send('Error retrieving data from database');
-      return;
-    }
-    res.json(results);
-  });
-});
-
-app.listen(port, () => {
-  console.log(`API server running at http://localhost:${port}`);
-});
-
-
-
-
 document.addEventListener('DOMContentLoaded', () => {
   // URL de la API
-  const apiUrl = 'http://localhost:3000/libros';
+  const apiUrl = 'http://localhost:3000';
 
   // Usar fetch para obtener los datos de la API
   fetch(apiUrl)

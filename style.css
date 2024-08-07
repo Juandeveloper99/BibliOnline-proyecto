@@ -104,9 +104,6 @@ body {
   background-attachment: fixed;
 }
 
-a-container {
-  text-align: center;
-}
 
 .my-button {
   background-color: #007bff;
@@ -151,8 +148,6 @@ body {
   box-shadow: 0 2px 4px rgba(214, 61, 61, 0.1);
   background: #373737;
   color:#f0f0f0;
-
-
   z-index: 1000;
 }
 
@@ -175,9 +170,6 @@ button {
   cursor: pointer;
 }
 
-button:hover {
-  background-color: #0056b3;
-}
 
 #results {
   margin-top: 70px;
@@ -196,7 +188,24 @@ div a {
   display: flex;
   justify-content: center;
   text-decoration: none;
+
 }
-div :hover{
+
+.leidos a {
+  color:#ffff;
+
+}
+
+.leidos :hover{
   background-color: #0056b3;
+
+}
+
+.autores :hover{
+  background-color: #0056b3;
+
+}
+.recientes :hover{
+  background-color: #0056b3;
+
 }
